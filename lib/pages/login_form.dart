@@ -14,6 +14,7 @@ class _LoginFormState extends State<LoginForm> {
 
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  bool _obscureText = true;
 
   @override
   Widget build(BuildContext context) {
@@ -68,26 +69,29 @@ class _LoginFormState extends State<LoginForm> {
                       ),
                     ],
                   ),
-                  TextFormField(
-                    style: const TextStyle(
-                      color: Colors.white,
-                    ),
-                    decoration: const InputDecoration(
-                      contentPadding: EdgeInsets.symmetric(vertical: 5.0),
-                      border: OutlineInputBorder(),
-                      fillColor: Colors.black,
-                      filled: true,
-                      hintText: '   email',
-                      hintStyle: TextStyle(
-                        color: Colors.grey,
+                  Container(
+                    height: 35,
+                    child: TextFormField(
+                      style: const TextStyle(
+                        color: Colors.white,
                       ),
+                      decoration: const InputDecoration(
+                        contentPadding: EdgeInsets.symmetric(vertical: 5.0),
+                        border: OutlineInputBorder(),
+                        fillColor: Colors.black,
+                        filled: true,
+                        hintText: '   email',
+                        hintStyle: TextStyle(
+                          color: Colors.grey,
+                        ),
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter the userId';
+                        }
+                        return null;
+                      },
                     ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter the userId';
-                      }
-                      return null;
-                    },
                   ),
                   const SizedBox(
                     height: 30,
@@ -113,26 +117,44 @@ class _LoginFormState extends State<LoginForm> {
                       ),
                     ],
                   ),
-                  TextFormField(
-                    style: const TextStyle(
-                      color: Colors.white,
-                    ),
-                    decoration: const InputDecoration(
-                      contentPadding: EdgeInsets.symmetric(vertical: 10.0),
-                      border: OutlineInputBorder(),
-                      fillColor: Colors.black,
-                      filled: true,
-                      hintStyle: TextStyle(
-                        color: Colors.grey,
+                  Container(
+                    height: 35,
+                    child: TextFormField(
+                      // obscureText: true,
+                      controller: _passwordController,
+                      obscureText: _obscureText,
+                      style: const TextStyle(
+                        color: Colors.white,
                       ),
-                      hintText: '   password',
+                      decoration: const InputDecoration(
+                        contentPadding: EdgeInsets.symmetric(vertical: 10.0),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.red),
+                        ),
+                        fillColor: Colors.black,
+                        filled: true,
+                        hintStyle: TextStyle(
+                          color: Colors.grey,
+                        ),
+                        hintText: '   password',
+                        // suffixIcon: IconButton(
+                        //   color: Colors.grey,
+                        //   icon: Icon(
+                        //     _obscureText
+                        //         ? Icons.visibility
+                        //         : Icons.visibility_off,
+                        //   ),
+                        //   onPressed: _togglePasswordVisibility,
+                        // ),
+                      ),
+
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter the Password';
+                        }
+                        return null;
+                      },
                     ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter the Password';
-                      }
-                      return null;
-                    },
                   ),
                   const SizedBox(
                     height: 20,
@@ -174,6 +196,9 @@ class _LoginFormState extends State<LoginForm> {
                       ),
                     ),
                   ),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   TextButton(
                     onPressed: () {
                       const snackdemo = SnackBar(
@@ -200,4 +225,97 @@ class _LoginFormState extends State<LoginForm> {
       ),
     );
   }
+
+  void _togglePasswordVisibility() {
+    setState(() {
+      _obscureText = !_obscureText;
+    });
+  }
 }
+
+
+
+// import 'package:flutter/material.dart';
+// import 'package:gma_academy_program/pages/dashboard.dart';
+
+// /// Flutter code sample for [BottomNavigationBar].
+
+// void main() => runApp(const BottomNavigationBarExampleApp());
+
+// class BottomNavigationBarExampleApp extends StatelessWidget {
+//   const BottomNavigationBarExampleApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return const MaterialApp(
+//       home: BottomNavigationBarExample(),
+//     );
+//   }
+// }
+
+// class BottomNavigationBarExample extends StatefulWidget {
+//   const BottomNavigationBarExample({super.key});
+
+//   @override
+//   State<BottomNavigationBarExample> createState() =>
+//       _BottomNavigationBarExampleState();
+// }
+
+// class _BottomNavigationBarExampleState
+//     extends State<BottomNavigationBarExample> {
+//   int _selectedIndex = 0;
+//   static const TextStyle optionStyle =
+//       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+//   static const List<Widget> _widgetOptions = <Widget>[
+//     Text(
+//       'Index 0: Home',
+//       style: optionStyle,
+//     ),
+//     DashboardScreen(),
+//     Text(
+//       'Index 1: Business',
+//       style: optionStyle,
+//     ),
+//     Text(
+//       'Index 2: School',
+//       style: optionStyle,
+//     ),
+//   ];
+
+//   void _onItemTapped(int index) {
+//     setState(() {
+//       _selectedIndex = index;
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('BottomNavigationBar Sample'),
+//       ),
+//       body: Center(
+//         child: _widgetOptions.elementAt(_selectedIndex),
+//       ),
+//       bottomNavigationBar: BottomNavigationBar(
+//         items: const <BottomNavigationBarItem>[
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.home),
+//             label: 'Home',
+//           ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.business),
+//             label: 'Business',
+//           ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.school),
+//             label: 'School',
+//           ),
+//         ],
+//         currentIndex: _selectedIndex,
+//         selectedItemColor: Colors.amber[800],
+//         onTap: _onItemTapped,
+//       ),
+//     );
+//   }
+// }

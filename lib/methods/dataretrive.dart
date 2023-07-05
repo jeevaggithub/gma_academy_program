@@ -3,9 +3,9 @@ import 'package:http/http.dart' as http;
 
 import 'package:gma_academy_program/variables/variable.dart';
 
-Future<void> userlogin(BuildContext context, email, password) async {
-  var url = baseurl + 'login.php';
-
+Future<void> userlogin(context, email, password) async {
+  // var url = ${baseurl}+'login.php';
+  var url = '$baseurl/login.php';
   print(email);
   print(password);
 
@@ -27,17 +27,17 @@ Future<void> userlogin(BuildContext context, email, password) async {
 
     showDialog(
       context: context,
-      builder: (BuildContext context) {
+      builder: (context) {
         return AlertDialog(
-          title: Text('success'),
+          title: const Text('success'),
           content: Text(email + ' authenticated successfully'),
           actions: [
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/dashboard');
+                Navigator.pushNamed(context, '/home');
                 // Navigator.of(context).pop(); // Close the dialog
               },
-              child: Text('Go to dashboard'),
+              child: const Text('Go to dashboard'),
             ),
           ],
         );
