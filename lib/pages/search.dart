@@ -15,6 +15,7 @@ class _SearchScreenSate extends State<SearchScreen> {
     return Scaffold(
       backgroundColor: Colors.blueAccent,
       body: Container(
+        height: 40,
         // color: Colors.black,
         padding: const EdgeInsets.only(left: 10, right: 10, top: 1),
         child: TextFormField(

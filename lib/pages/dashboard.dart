@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gma_academy_program/widgets/home_section_widget.dart';
 // import 'package:gma_academy_program/pages/footer.dart';
 // import 'package:gma_academy_program/pages/header.dart';
 // import 'package:gma_academy_program/pages/favorite.dart';
@@ -24,60 +25,57 @@ class _DashboardScreenState extends State<DashboardScreen> {
     //   SearchScreen(),
     //   ProfileScreen(),
     // ];
-    return Scaffold(
-      backgroundColor: Colors.blueAccent,
-      body: Container(
-        height: MediaQuery.of(context).size.height,
-        child: Column(
-          children: [
-            // HeaderWidget(),
-            Expanded(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    const SizedBox(height: 10),
-                    // Additional content here
-                    const Text(
-                      'Some content between the header and footer',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    const Text(
-                      'More content',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                    const SizedBox(height: 100),
-                    const Text(
-                      'DASHBOARD',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                    ElevatedButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/login');
-                        },
-                        child: const Text("Click ME To login"))
-                  ],
-                ),
-                // child: _screens[_currentIndex],
-              ),
-            ),
-            // FooterWidget(),
-            // FooterWidget(
-            //   currentIndex: _currentIndex,
-            //   onTap: (index) {
-            //     setState(() {
-            //       _currentIndex = index;
-            //     });
-            //   },
-            // ),
-          ],
-        ),
+    // return const SingleChildScrollView(
+    //     child: Scaffold(
+    //   backgroundColor: Colors.blueAccent,
+    //   body: SizedBox(
+    //     // child: const HomeSectionWidget(),
+    //     child: Column(
+    //       children: [
+    //         // HomeSectionWidget(
+    //         //     heading: "Introducing:Courses",
+    //         //     desc:
+    //         //         "Listen through expertly curated playlists for right where you are at in your journey.",
+    //         //     btnName: "CHECK IT OUT",
+    //         //     bgImage:
+    //         //         'https://images.pexels.com/photos/894156/pexels-photo-894156.jpeg?auto=compress&cs=tinysrgb&w=600'),
+    //         // HomeSectionWidget(
+    //         //     heading: "Introducing: SongStories",
+    //         //     desc:
+    //         //         "A brand new Docuseries behind songs like 'How Great Is Our God' & more.",
+    //         //     btnName: "WATCH NOW",
+    //         //     bgImage:
+    //         //         'https://images.pexels.com/photos/894156/pexels-photo-894156.jpeg?auto=compress&cs=tinysrgb&w=600'),
+    //         Text(
+    //           'dashboard is working! ',
+    //           style: TextStyle(color: Colors.black),
+    //         ),
+    //       ],
+    //     ),
+    //   ),
+    // ));
+
+    return const SingleChildScrollView(
+      child: Column(
+        children: [
+          HomeSectionWidget(
+              heading: "Introducing:Courses",
+              desc:
+                  "Listen through expertly curated playlists for right where you are at in your journey.",
+              btnName: "CHECK IT OUT",
+              bgImage:
+                  'https://images.pexels.com/photos/7173192/pexels-photo-7173192.jpeg?auto=compress&cs=tinysrgb&w=600'),
+          SizedBox(
+            height: 1,
+          ),
+          HomeSectionWidget(
+              heading: "Introducing: SongStories",
+              desc:
+                  "A brand new Docuseries behind songs like 'How Great Is Our God' & more.",
+              btnName: "WATCH NOW",
+              bgImage:
+                  'https://images.pexels.com/photos/894156/pexels-photo-894156.jpeg?auto=compress&cs=tinysrgb&w=600'),
+        ],
       ),
     );
   }

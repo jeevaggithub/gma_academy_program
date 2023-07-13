@@ -87,18 +87,22 @@ class _BottomNavigationBarExampleState
                 label: 'Home',
               ),
               BottomNavigationBarItem(
+                backgroundColor: Colors.lightGreen,
                 icon: Icon(Icons.favorite),
                 label: 'favorites',
               ),
               BottomNavigationBarItem(
+                backgroundColor: Colors.lightGreen,
                 icon: Icon(Icons.menu),
                 label: 'menu',
               ),
               BottomNavigationBarItem(
+                backgroundColor: Colors.lightGreen,
                 icon: Icon(Icons.search),
                 label: 'search',
               ),
               BottomNavigationBarItem(
+                backgroundColor: Colors.lightGreen,
                 icon: Icon(Icons.person),
                 label: 'profile',
               ),
