@@ -354,10 +354,10 @@ class _RegisterFormState extends State<RegisterFrom> {
                               //     _mobileController.text,
                               //     _passwordController.text,
                               //     _confirmpasswordController.text);
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                    content: Text('Processing Data')),
-                              );
+                              // ScaffoldMessenger.of(context).showSnackBar(
+                              //   const SnackBar(
+                              //       content: Text('Processing Data')),
+                              // );
                               userDetailServer(
                                 context,
                                 _firstNameController.text,

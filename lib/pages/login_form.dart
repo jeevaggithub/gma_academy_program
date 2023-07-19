@@ -72,6 +72,7 @@ class _LoginFormState extends State<LoginForm> {
                   Container(
                     height: 35,
                     child: TextFormField(
+                      controller: _emailController,
                       style: const TextStyle(
                         color: Colors.white,
                       ),
@@ -181,9 +182,10 @@ class _LoginFormState extends State<LoginForm> {
                         if (_formKey.currentState!.validate()) {
                           // If the form is valid, display a snackbar. In the real world,
                           // you'd often call a server or save the information in a database.
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text('Processing Data')),
-                          );
+                          // ScaffoldMessenger.of(context).showSnackBar(
+                          //   const SnackBar(content: Text('Processing Data')),
+                          // );
+                          // print(_emailController.text);
                           userlogin(context, _emailController.text,
                               _passwordController.text);
                         }
