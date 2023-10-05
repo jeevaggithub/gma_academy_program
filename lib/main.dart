@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gma_academy_program/pages/cources.dart';
 import 'package:gma_academy_program/pages/dashboard.dart';
 import 'package:gma_academy_program/pages/favorite.dart';
 import 'package:gma_academy_program/pages/home.dart';
@@ -9,6 +10,8 @@ import 'package:gma_academy_program/pages/search.dart';
 import 'package:gma_academy_program/pages/start_screen.dart';
 import 'package:gma_academy_program/pages/login_form.dart';
 import 'package:gma_academy_program/pages/register.dart';
+import 'package:gma_academy_program/widgets/video_player.dart';
+// import 'package:gma_academy_program/widgets/course_list_widget.dart';
 
 void main() {
   runApp(
@@ -18,12 +21,7 @@ void main() {
       ),
       themeMode: ThemeMode.light,
       debugShowCheckedModeBanner: false,
-      // onUnknownRoute: (settings) {
-      //   // Handle unknown route here
-      //   // You can navigate to a specific page or show an error widget
-      //   return MaterialPageRoute(
-      //       builder: (context) => const BottomNavigationBarExampleApp());
-      // },
+
       home: const Scaffold(
         // backgroundColor: Colors.red,
         body: StartScreen(),
@@ -40,6 +38,10 @@ void main() {
         '/menu': (BuildContext context) => const MenuScreen(),
         '/search': (BuildContext context) => const SearchScreen(),
         '/profile': (BuildContext context) => const ProfileScreen(),
+        '/courses': (BuildContext context) => const CourcesScreen(),
+        '/video': (BuildContext context) => const VideoPlayerView(
+              url: '',
+            ),
       },
     ),
   );

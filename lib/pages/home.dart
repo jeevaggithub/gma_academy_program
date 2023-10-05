@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gma_academy_program/pages/cources.dart';
 
 import 'package:gma_academy_program/pages/dashboard.dart';
 // import 'package:gma_academy_program/pages/footer.dart';
@@ -11,6 +12,8 @@ import 'package:gma_academy_program/pages/register.dart';
 import 'package:gma_academy_program/pages/search.dart';
 import 'package:gma_academy_program/pages/profile.dart';
 import 'package:gma_academy_program/pages/start_screen.dart';
+import 'package:gma_academy_program/widgets/video_player.dart';
+// import 'package:gma_academy_program/widgets/course_list_widget.dart';
 
 // / Flutter code sample for [BottomNavigationBar].
 
@@ -36,6 +39,10 @@ class BottomNavigationBarExampleApp extends StatelessWidget {
         '/menu': (BuildContext context) => const MenuScreen(),
         '/search': (BuildContext context) => const SearchScreen(),
         '/profile': (BuildContext context) => const ProfileScreen(),
+        '/courses': (BuildContext context) => const CourcesScreen(),
+        '/video': (BuildContext context) => const VideoPlayerView(
+              url: '',
+            ),
       },
     );
   }

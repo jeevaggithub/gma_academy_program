@@ -19,33 +19,41 @@ class _MenuScreenSate extends State<MenuScreen> {
         child: Column(
           children: [
             const MenuSectionWidget(
-                imagePath:
-                    'https://images.pexels.com/photos/414628/pexels-photo-414628.jpeg?auto=compress&cs=tinysrgb&w=600',
-                content: "courses"),
+              imagePath:
+                  'https://images.pexels.com/photos/414628/pexels-photo-414628.jpeg?auto=compress&cs=tinysrgb&w=600',
+              content: "courses",
+              routePath: '/courses',
+            ),
             Container(
               height: 0.5,
               color: Colors.white,
             ),
             const MenuSectionWidget(
-                imagePath:
-                    'https://images.pexels.com/photos/821948/pexels-photo-821948.jpeg?auto=compress&cs=tinysrgb&w=600',
-                content: "Videos"),
+              imagePath:
+                  'https://images.pexels.com/photos/821948/pexels-photo-821948.jpeg?auto=compress&cs=tinysrgb&w=600',
+              content: "Videos",
+              routePath: '',
+            ),
             Container(
               height: 0.5,
               color: Colors.white,
             ),
             const MenuSectionWidget(
-                imagePath:
-                    'https://images.pexels.com/photos/3771813/pexels-photo-3771813.jpeg?auto=compress&cs=tinysrgb&w=600',
-                content: "Full Audio Library"),
+              imagePath:
+                  'https://images.pexels.com/photos/3771813/pexels-photo-3771813.jpeg?auto=compress&cs=tinysrgb&w=600',
+              content: "Full Audio Library",
+              routePath: '',
+            ),
             Container(
               height: 0.5,
               color: Colors.white,
             ),
             const MenuSectionWidget(
-                imagePath:
-                    'https://images.pexels.com/photos/7412085/pexels-photo-7412085.jpeg?auto=compress&cs=tinysrgb&w=600',
-                content: "Guides for Indie Artists"),
+              imagePath:
+                  'https://images.pexels.com/photos/7412085/pexels-photo-7412085.jpeg?auto=compress&cs=tinysrgb&w=600',
+              content: "Guides for Indie Artists",
+              routePath: '',
+            ),
             Container(
               height: 0.5,
               color: Colors.white,

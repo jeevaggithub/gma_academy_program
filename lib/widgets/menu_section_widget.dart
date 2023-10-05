@@ -3,8 +3,12 @@ import 'package:flutter/material.dart';
 class MenuSectionWidget extends StatefulWidget {
   final String imagePath;
   final String content;
+  final String routePath;
   const MenuSectionWidget(
-      {super.key, required this.imagePath, required this.content});
+      {super.key,
+      required this.imagePath,
+      required this.content,
+      required this.routePath});
   @override
   State<MenuSectionWidget> createState() => _MenuSectionWidgetState();
 }
@@ -37,7 +41,9 @@ class _MenuSectionWidgetState extends State<MenuSectionWidget> {
               // ),
               const Spacer(),
               IconButton.filled(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, widget.routePath);
+                },
                 icon: const Icon(
                   Icons.keyboard_arrow_right_outlined,
                   color: Colors.white,

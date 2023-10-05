@@ -8,13 +8,34 @@ class HeaderWidget extends StatelessWidget implements PreferredSizeWidget {
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return WillPopScope(
+      onWillPop: () async {
+        // Prevent the user from going back to the previous page (pop)
+        return false;
+      },
+      child: Container(
         padding: const EdgeInsets.symmetric(vertical: 10),
         color: Colors.lightGreen,
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 10), // Add left padding
+              child: Align(
+                alignment: Alignment.center, // Vertically center the icon
+                child: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(
+                      Icons.arrow_left_outlined,
+                      color: Colors.white,
+                      size: 45,
+                    )),
+              ),
+            ),
             const SizedBox(
-              width: 160,
+              width: 20,
             ),
             Image.asset(
               'assets/images/gma_logo.png',
@@ -42,7 +63,9 @@ class HeaderWidget extends StatelessWidget implements PreferredSizeWidget {
               color: Colors.white,
             ),
           ],
-        ));
+        ),
+      ),
+    );
   }
 }
 

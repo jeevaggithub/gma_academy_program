@@ -11,12 +11,6 @@ Future<void> userDetailServer(BuildContext context, String firstName,
     String lastName, String email, mobile, String password) async {
   var url = '$baseurl/signup';
 
-  // print(url);
-  // print(lastName);
-  // print(email);
-  // print(mobile);
-  // print(password);
-
   var name = firstName + lastName;
 
   var response = await http.post(
